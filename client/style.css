@@ -1,0 +1,9 @@
+.centered-content{
+	text-align: center;
+
+	padding: 20px;
+
+	border: 1px solid blue;
+
+	border-radius: 20px;
+}
