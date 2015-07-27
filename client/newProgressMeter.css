@@ -1,0 +1,47 @@
+body {
+	background-color: #5E97F2;
+}
+
+#title {
+	font-family: 'Abel';
+	font-size: 51;
+	color: white;
+	text-align: center;
+}
+
+#subtitle {
+	font-family: 'Abel';
+	font-size: 36;
+	color: white;
+	text-align: center;
+}
+
+.form-label {
+	width: 100%;
+	font-family: 'Abel';
+	font-size: 36;
+	color: white;
+}
+
+.button-center {
+	font-family: 'Abel';
+	margin-top: 10px;
+	top: 50%;
+}
+
+.edit-stage {
+	background-color: #4487F2;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 10 10 10 10;
+	border-radius: 20px;
+	border: 2px solid white;
+}
+
+.form-group{
+	color: red;
+}
+
+.stage-form {
+	background-color: white;
+}

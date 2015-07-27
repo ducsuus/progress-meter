@@ -1,0 +1,67 @@
+<!-- Wordlze - a test by Joe Mattelaer and James Muir -->
+<html>
+
+<head>
+
+<!-- Bootstrap Base CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional Bootstrap Theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Google Fonts - Abel -->
+<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+
+<!-- Local CSS -->
+<link rel="stylesheet" type="text/css" href="newProgressMeter-2.css">
+
+</head>
+
+<body>
+<h1 id='title'>Create a new progress meter</h1>
+
+<!-- Page Content Container -->
+<div class='container'>
+
+	<div class='row'>
+
+		<div class='col-lg-3 col-sm-1'></div>
+		
+		<div class='col-lg-6 col-sm-10'>
+			<form action='http://yrs.ducsuus.com/project/pre-test/new.php' method='post'>
+		    	<div class="form-group">
+					<label class='form-label' for="name">Name</label>
+				    <input type="text" class="form-control" name="name" placeholder="Name of the progress meter">
+				</div>
+				<div class="form-group">
+				    <label class='form-label' for="description">Desccription</label>
+				    <input type="text" class="form-control" description="description" placeholder="Description">
+				</div>
+				<div class='form-group'>
+					<label class='form-label'>Edit Stages</label>
+				</div>
+
+				<div id='joetesting'></div>
+
+				<div class='button-center' style='text-align: center; padding: 0 0 10 0'><button class="btn btn-default" type='button' onclick='addNewStage()'>Add new stage</button></div>
+
+				<div></div>
+
+				<div class='button-center' style='text-align: center;'><button type="submit" class="btn btn-default">Submit</button></div>
+			</form>
+		</div>	
+
+	</div>
+</div>
+
+</body>
+
+<!-- JQuery (For Bootstrap) -->
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Bootstrap Javascript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src='newProgressMeter-2.js'></script>
+
+</html>
