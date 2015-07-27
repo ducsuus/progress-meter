@@ -12,4 +12,4 @@
 //
 */
 
-echo 'Hello world from update.php!';
+echo 'Hello world!';
