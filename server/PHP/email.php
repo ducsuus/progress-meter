@@ -4,7 +4,9 @@
 function email(){
     $to      = 'JRMuir09@Gmail.com';
     $subject = 'the subject';
-    $message = 'hello world';
+    $message = "Hello World";
+    //For when put on server
+    //$message = $conn->prepare('SELECT * FROM progress_bars WHERE editcode=:editcode;');
     $headers = 'From: test@jamesrmuir.uk' . "\r\n" .
         'Reply-To: test@jamesrmuir.uk' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();

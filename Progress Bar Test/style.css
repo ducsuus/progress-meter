@@ -1,0 +1,123 @@
+/* 
+Start of progress bar one 
+*/
+.row {
+    border: 2px solid grey;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.row div {
+  /* The vertical alignment magic */
+  display: inline-block;
+  vertical-align: middle;
+  
+  width: 100%; /* Needs width for inline-block */
+ 
+  /* Fix for IE <= 7 */
+  *display: inline;
+  *zoom:1;
+  *width: 16.6%;
+    
+  text-align: center;
+
+}
+
+/* Change number of boxes per row based on viewport width */
+@media (min-width: 300px) {
+  .row div {
+    width: 48%;
+  }
+}
+@media all and (min-width: 500px) {
+  .row div {
+    width: 31%;
+  }
+}
+@media all and (min-width: 700px) {
+  .row div {
+    width: 14%;
+  }
+}
+
+/* Set height and color of boxes */
+#a {
+    width: 49%;
+}
+#b {
+    width: 9%;
+}
+#c {
+    width: 19%;
+}
+#d {
+    width: 4%;
+}
+#e {
+    width: 14%;
+}
+#f {
+    width: 14%;
+}
+#g {
+    width: 14%;
+}
+#h {
+    width: 14%;
+}
+#i {
+    
+}
+
+body { background-color: #f7f7f7; font-family: sans-serif; font-weight: bold; color: #fff}
+
+.start-time {
+    float: left;
+    color: black;
+    margin: 5px;
+    position: relative;
+    display: inline-block;
+    background: lightblue;
+    border-radius: 5px;
+}
+
+.due-time {
+    float: right;
+    color: black;
+    margin: 5px;
+    position: relative;
+    display: inline-block;
+    background: lightblue;
+    border-radius: 5px;
+}
+
+.outer-box {
+    /*border: 2px grey solid;*/
+}
+
+.active {
+    padding: 1.5em 0;
+    background: #2B569B;
+    border: 1px solid black;
+}
+
+.not-active {
+    padding: 1.5em 0;
+    background: #5E97F2;
+    border: 1px solid black;
+}
+
+.row p {
+    font-size: 11px;
+    font-family: sans-serif; 
+    font-weight: bold; 
+    color: #fff;
+
+}
+
+.add-box {
+    width: 5%;
+    padding: 1.5em 0;
+    background: #5E97F2;
+    border: 1px solid black;
+}
