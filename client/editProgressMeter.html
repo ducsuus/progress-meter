@@ -33,20 +33,27 @@
 		<div class='col-lg-6 col-sm-10'>
 			<form>
 		    	<div class="form-group">
-					<label id='form-label' for="description">Descripton</label>
+					<label class='form-label' for="description">Descripton</label>
 				    <input type="text" class="form-control" id="description" placeholder="Description of the progress meter">
 				</div>
 				<div class="form-group">
-				    <label id='form-label' for="stages">Stages</label>
+				    <label class='form-label' for="stages">Stages</label>
 				    <input type="number" class="form-control" id="stages" placeholder="Stages">
 				</div>
 				<div class='form-group'>
-					<label id='form-label' for='current-stage'>Current Stage</label>
+					<label class='form-label' for='current-stage'>Current Stage</label>
 					<input type='number' class='form-control' id='current-stage' placeholder='Current Stage'>
 				</div>
 				<div class='form-group'>
-					<label id='form-label'>Edit Stages</label>
-				<button type="submit" class="btn btn-default">Save changes</button>
+					<label class='form-label'>Edit Stages</label>
+
+				<div id='joetesting'></div>
+
+				<div class='button-center' style='text-align: center; padding: 0 0 10 0'><button class="btn btn-default button-center" type='button' onclick='addNewStage()'>Add new stage</button></div>
+
+				<div></div>
+
+				<div class='button-center' style='text-align: center;'><button type="submit" class="btn btn-default">Submit</button></div>
 			</form>
 		</div>	
 
@@ -56,9 +63,12 @@
 </body>
 
 <!-- JQuery (For Bootstrap) -->
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <!-- Bootstrap Javascript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- Local Javascript -->
+<script src='newProgressMeter.js'></script>
 
 </html>

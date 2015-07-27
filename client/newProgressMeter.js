@@ -15,6 +15,7 @@ function addNewStage() {
 		<div class="edit-stage">\
 			<div class="form-group">\
 				<label class="form-label" for="stageName">Stage ' + (stageID + 1) + '</label>\
+				<button class="btn btn-default button-style" type="button" onclick="deleteStage()">Delete Stage</button>\
 				<!--<label class="form-label">Name</label> -->\
 				<input type="text" class="form-control stage-form" placeholder="Stage ' + (stageID + 1) + ' Name">\
 			</div>\
@@ -23,9 +24,6 @@ function addNewStage() {
 				<input type="text" class="form-control stage-form" stageDesc="stageDesc" placeholder="Description">\
 			</div>\
 		</div>';
-
-
-
 }
 
 // Remove button function

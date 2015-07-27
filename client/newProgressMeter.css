@@ -17,6 +17,7 @@ body {
 }
 
 .form-label {
+	display: inline-block;
 	width: 100%;
 	font-family: 'Abel';
 	font-size: 36;
@@ -44,4 +45,11 @@ body {
 
 .stage-form {
 	background-color: white;
+}
+
+.button-style {
+	display: inline-block;
+	font-family: 'Abel';
+	margin-bottom: 10px;
+	right: 10px;
 }
