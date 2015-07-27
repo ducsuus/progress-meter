@@ -1,6 +1,6 @@
 <?php
 
-// new.php - create a new progress bar
+// newbar.php - create a new progress bar
 
 /*
 
@@ -21,7 +21,7 @@ function randomString($random_string_length){
     $random_string = '';
     // Loop through the length given
     for ($i = 0; $i < $random_string_length; $i++) {
-    	// Add a new character for each iteration
+        // Add a new character for each iteration
         $random_string .= $characters[rand(0, strlen($characters) - 1)];
     }
 
@@ -32,27 +32,38 @@ function randomString($random_string_length){
 // Check to see if the name is an acceptable input
 $acceptable_input = true;
 
+$post_data = json_decode(file_get_contents('php://input'), true);
+
+echo $post_data['name'];
+
 // Check if the name is under a certain length
-if (strlen($_POST['name']) > 256){
-	// The input is not acceptable
+if (strlen($post_data['name']) > 256){
+    // The input is not acceptable
     $acceptable_input = false;
 }
 
 // Check if the name is under a certain length
-if (strlen($_POST['name']) <= 0){
-	// The input is not acceptable
+if (strlen($post_data['name']) <= 0){
+    // The input is not acceptable
     $acceptable_input = false;
 }
+
+//TODO: MAKE THIS WORK WITH OTHER OPTIONS
 
 // If we have an acceptable input
 if ($acceptable_input){
 
-    echo 'Name: ' . $_POST['name'] . '<br>';
+    header('Content-Type: application/json');
 
     // Put everything in a try statement to handle errors
     try{
+
+        $bar_properties = [];
+
+        $bar_properties = $_POST['name'];
+
         // Create connection
-        $conn = new PDO('mysql:host=localhost;dbname=progress-bar;', 'php', '09^asfd#8fa67g^h!@h67^^hj%Sfy048#+');
+        $conn = new PDO('mysql:host=localhost;dbname=progress-bars;', 'php', '09^asfd#8fa67g^h!@h67^^hj%Sfy048#+');
 
         // Generate and check the view and edit codes //
 
@@ -68,7 +79,7 @@ if ($acceptable_input){
 
         do {
 
-        	// Generate a view code
+            // Generate a view code
             $view_code = randomString(4);
 
             // Pass the view code in to the statement
@@ -83,7 +94,9 @@ if ($acceptable_input){
           // If the result exists, we need a new code
         } while ($result);
 
-        echo 'View code: ' . $view_code . '<br>';
+        //echo 'View code: ' . $view_code . '<br>';
+        // Add the viewcode
+        $bar_properties['viewcode'] = $view_code;
 
         /* Repeat again for the edit code. The edit code has far more digits because it needs to be more secure; it's really important no
            one can guess the edit code, because they would be able to go and edit it at any point... */
@@ -104,7 +117,9 @@ if ($acceptable_input){
 
         } while ($result);
 
-        echo 'Edit code: ' . $edit_code . '<br>';        
+        //echo 'Edit code: ' . $edit_code . '<br>';        
+        // Add the editcode
+        $bar_properties['editcode'] = $edit_code;
 
         // Add a new row with the name of the progress bar, a view code, and a edit code
        
@@ -120,17 +135,23 @@ if ($acceptable_input){
 
         // If we made a new entry, tell the use it was successfull
         if ($statement->execute($statement_parameters) === TRUE) {
-            echo "New record created successfully";
+            //echo "New record created successfully";
+
+            // Made the new entry, success!
+
+            echo json_encode($bar_properties);
+        }else{
+            echo 'Errors!';
         }
 
     }catch(exception $ex){
         echo $ex->getMessage();
     }
 } else{
-	// No acceptable input, let's give them a form to submit
+    // No acceptable input, let's give them a form to submit
 
-	// One lined so it doesn't mess with your eyes, literally a copy and paste from yrs.ducsuus.com/project/pre-test/new.html
-	echo '<html><head><title>Create a new progress bar</title></head><body><form action=\'new.php\' method=\'post\'>Name of progress bar: <input type="text" name="name"><br>Total stages: <input type="number" name="total_stages"><br><input type="submit"></form></body></html>';
+    // One lined so it doesn't mess with your eyes, literally a copy and paste from yrs.ducsuus.com/project/pre-test/new.html
+    echo '<html><head><title>Create a new progress bar</title></head><body><form action=\'newbar.php\' method=\'post\'>Name of progress bar: <input type="text" name="name"><br>Total stages: <input type="number" name="total_stages"><br><input type="submit"></form></body></html>';
 
 
 }

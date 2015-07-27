@@ -28,14 +28,14 @@
 		<div class='col-lg-3 col-sm-1'></div>
 		
 		<div class='col-lg-6 col-sm-10'>
-			<form action='http://yrs.ducsuus.com/project/pre-test/new.php' method='post'>
+			<form onsubmit='submitNewBarForm(); return false;'>
 		    	<div class="form-group">
 					<label class='form-label' for="name">Name</label>
-				    <input type="text" class="form-control" name="name" placeholder="Name of the progress meter">
+				    <input id='new-bar-form-name' type="text" class="form-control" name="bar-name" placeholder="Name of the progress meter">
 				</div>
 				<div class="form-group">
-				    <label class='form-label' for="description">Desccription</label>
-				    <input type="text" class="form-control" description="description" placeholder="Description">
+				    <label class='form-label' for="description">Description</label>
+				    <input id='new-bar-form-description' type="text" class="form-control" description="description" name='bar-description' placeholder="Description">
 				</div>
 				<div class='form-group'>
 					<label class='form-label'>Edit Stages</label>
@@ -47,7 +47,7 @@
 
 				<div></div>
 
-				<div class='button-center' style='text-align: center;'><button type="submit" class="btn btn-default">Submit</button></div>
+				<div class='button-center' style='text-align: center;'><button type='submit' class="btn btn-default">Submit</button></div>
 			</form>
 		</div>	
 
