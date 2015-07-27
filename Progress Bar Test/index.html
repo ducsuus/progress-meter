@@ -2,6 +2,8 @@
     <head>
         <title>Progress Bar</title>
         
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="jquery-2.1.4.js"></script>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -14,14 +16,15 @@
             <div class = "start-time" id=""><p>Start Time: 0:0:0</p></div>
             <div class="due-time" id=""><p>Due: 0:0:0</p></div>
             
-            <div class="row">  
+            <div class="row" id="progressBarOne">  
                 <br>
                 <br>
                 <br>
                <div class="active" id="a"><p>Step 1: Get Joe to do the server side stuff <br> Time: 11:46 <br> Description: Hurry up Joe</p></div>
             </div>
+            <button type="button" onclick="addStage()">Add stage</button>
         </div>
-        <button type="button" onclick="addStage()">Add stage</button>
+        
         <br>
         <br>
         <br>
@@ -50,6 +53,5 @@
 
     </body>
     
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="jquery-2.1.4.js"></script>
+    
 </html>
