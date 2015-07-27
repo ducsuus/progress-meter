@@ -3,6 +3,7 @@ body {
 }
 
 .title {
+	font-family: "Abel";
 	color: white;
 	text-align: center;
 	font-size: 70;
@@ -17,4 +18,11 @@ body {
 	font-family: 'Abel';
 	text-align: center;
 	font-size: 40;
+	-webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.subtitle:hover {
+	font-size: 43;
 }
