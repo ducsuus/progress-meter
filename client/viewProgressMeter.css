@@ -1,0 +1,26 @@
+body {
+	background-color: #5E97F2;
+}
+
+#title {
+	font-family: 'Abel';
+	font-size: 60;
+	color: white;
+	text-align: center;
+}
+
+#subtitle {
+	font-family: 'Abel';
+	font-size: 36;
+	color: white;
+	text-align: center;
+}
+
+#form-label {
+
+	width: 100%;
+
+	font-family: 'Abel';
+	font-size: 36;
+	color: white;
+}

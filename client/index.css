@@ -2,6 +2,10 @@ body {
 	background-color: #5e97f2;
 }
 
+.space{
+	height: 50px;
+}
+
 .title {
 	font-family: "Abel";
 	color: white;
