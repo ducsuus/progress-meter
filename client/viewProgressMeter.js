@@ -19,13 +19,9 @@ function getStages(){
 
             var stageContainer = document.getElementById('stage-list');
 
-            stageContainer.innerHTML = 'dsadasdsadasdasd';
-
             for (var x = 0; x < response.length; x++){
-                for (var property in response[x]){
-                    stageContainer.innerHTML += ', ' + response[x][property];
-                }
-                stageContainer.innerHTML += '<br>';
+                var line = '<b>Stage Title:</b> ' + response[x]['title'] + ' <b>Stage Information:</b> ' + response[x]['information'] + ' <b>Complete:</b> ' + response[x]['complete'];
+                stageContainer.innerHTML += line + '<br>';
             }
         }
     }
