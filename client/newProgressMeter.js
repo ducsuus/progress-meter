@@ -9,18 +9,31 @@ function submitNewBarForm(){
 	var json_array = {};
 
 	json_array['name'] = document.getElementById('new-bar-form-name').value;
-	console.log(document.getElementById('new-bar-form-name').value);
 	json_array['description'] = document.getElementById('new-bar-form-description').value;
 	json_array['stages'] = stages;
 
 	var xhr = new XMLHttpRequest();
 
-	xhr.open('POST', '../')
-
 	xhr.onreadystatechange=function(){
 		// Received a response from the server
 		if (xhr.readyState==4 && xhr.status==200){
 			console.log('Received a response: ' + xhr.responseText);
+
+			// here goes adding the codes to HTML
+
+			var response = JSON.parse(xhr.responseText);
+
+			if(response['viewcode'] && response['editcode']){
+				console.log('Received valid JSON response');
+
+				var formContainer = document.getElementById('form-container');
+
+				var codeHTML = '<div style="border-radius: 10px; border: 2px solid black; background-color: white;">Viewcode: ' + response['viewcode'] + '</div><div style="border-radius: 10px; border: 2px solid black; background-color: white;">Editcode: ' + response['editcode'] + '</div>dasdsadasdasdasdsa';
+
+				formContainer.innerHTML = codeHTML;
+
+			}
+
 		}
 		
 	}
@@ -33,9 +46,6 @@ function submitNewBarForm(){
 
 	// Send the array
 	xhr.send(JSON.stringify(json_array));
-
-	console.log(json_array);
-	console.log(JSON.stringify(json_array));
 
 }
 

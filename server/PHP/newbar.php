@@ -34,8 +34,6 @@ $acceptable_input = true;
 
 $post_data = json_decode(file_get_contents('php://input'), true);
 
-echo $post_data['name'];
-
 // Check if the name is under a certain length
 if (strlen($post_data['name']) > 256){
     // The input is not acceptable
@@ -63,7 +61,7 @@ if ($acceptable_input){
         $bar_properties = $_POST['name'];
 
         // Create connection
-        $conn = new PDO('mysql:host=localhost;dbname=progress-bars;', 'php', '09^asfd#8fa67g^h!@h67^^hj%Sfy048#+');
+        $conn = new PDO('mysql:host=localhost;dbname=progress-bar;', 'php', '09^asfd#8fa67g^h!@h67^^hj%Sfy048#+');
 
         // Generate and check the view and edit codes //
 
@@ -141,7 +139,8 @@ if ($acceptable_input){
 
             echo json_encode($bar_properties);
         }else{
-            echo 'Errors!';
+            echo 'Errors: ';
+            print_r($statement->errorInfo());
         }
 
     }catch(exception $ex){
