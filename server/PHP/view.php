@@ -49,7 +49,7 @@ try{
     // If the code is 4 characters long, we are viewing the progress bar TODO: add the functionality for people editing their progress bar to view as well, print this anyway?
     if (strlen($_GET['code']) === 4){
 
-        // Create connection
+        // Create connection to the mySQL database
         $conn = new PDO('mysql:host=localhost;dbname=progress-bars;', 'php', '09^asfd#8fa67g^h!@h67^^hj%Sfy048#+');
 
         // Prepare a statement to find try and find a entry with the view code supplied (the BINARY tag is used to make sure that case does matter)
@@ -113,7 +113,9 @@ try{
         // Prepare a statement to find the 
         $statement = $conn->prepare('SELECT * FROM progress_bars WHERE editcode=:editcode;');
 
+        //Removes everything from statement_parameters
         empty($statement_parameters);
+        
         $statement_parameters[':editcode'] = $_GET['code'];
 
         $statement->execute($statement_parameters);
@@ -139,7 +141,7 @@ try{
 
             }
 
-
+            //Displays the information from the database
             print_r($result['name']);
             echo '<br>';
             print_r($result['viewcode']);
