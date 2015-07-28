@@ -3,8 +3,11 @@
 var id = 0
 
 function email(id){
+    // Create a PDO connection
     $conn = new PDO('mysql:host=localhost;dbname=progress-bars;', 'php', '09^asfd#8fa67g^h!@h67^^hj%Sfy048#+');
     
+    // Looks for things in the database
+    $statement = $conn->prepare('SELECT * FROM progress_bars WHERE BINARY viewcode=:viewcode;');
     
     $to      = 'JRMuir09@Gmail.com'; //TODO: replace with the email of the user id
     $subject = 'Progress Bar Alert'; 
