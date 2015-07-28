@@ -55,4 +55,6 @@ body {
 	font-family: 'Abel';
 	margin-bottom: 10px;
 	right: 10px;
+	top: 50%;
+	float: right;
 }
