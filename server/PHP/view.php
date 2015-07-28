@@ -48,7 +48,7 @@ try{
     if (strlen($_GET['code']) === 4){
 
         // Create connection to the mySQL database
-        $conn = new PDO('mysql:host=localhost;dbname=progress-bars;', 'php', '09^asfd#8fa67g^h!@h67^^hj%Sfy048#+');
+        $conn = new PDO('mysql:host=localhost;dbname=progress-bar;', 'php', '09^asfd#8fa67g^h!@h67^^hj%Sfy048#+');
 
         // Prepare a statement to find try and find a entry with the view code supplied (the BINARY tag is used to make sure that case does matter)
         $statement = $conn->prepare('SELECT * FROM progress_bars WHERE BINARY viewcode=:viewcode;');
