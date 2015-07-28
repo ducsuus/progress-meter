@@ -5,8 +5,8 @@ ini_set('display_errors', '1');
 
 require 'class-Clockwork.php';
 
-//function send-sms(){
-    echo "Test";
+function sendsms(id){
+    
     
     // Create a Clockwork object using your API key
     $key = "2cb8a8f432abf611a26ab0c51e3a99c70fa01e67";
@@ -23,7 +23,7 @@ require 'class-Clockwork.php';
     } else {
         echo "Message failed - Error: " . $result["error_message"];
     }
-//}
+}
 
 //send-sms();
 ?>
