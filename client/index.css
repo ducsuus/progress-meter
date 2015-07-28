@@ -26,3 +26,20 @@ body {
 .subtitle:hover {
 	font-size: 43;
 }
+
+.progress{
+	width:100%;
+	border-radius: 0px;
+}
+
+.progress-bar{
+	width:100%;
+	-webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.progress:hover > .progress-bar{
+	width:100%;
+	border-radius: 0px;
+}
