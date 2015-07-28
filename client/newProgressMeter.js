@@ -57,13 +57,15 @@ function addNewStage(){
 }
 
 function deleteStage(id){
-	stages.pop(id);
+
+	stages.splice(id, 1);
+
 	updateStages();
 }
 
 // Function to re-draw all stages
 function updateStages() {
-	var stageContainer = document.getElementById('joetesting2');
+	var stageContainer = document.getElementById('stages-container');
 
 	var stageHTML = ''
 
@@ -71,6 +73,8 @@ function updateStages() {
 
 	for (var i = 0; i < stages.length; i++){
 		console.log(stages[i][1]);
+		// Much easier on our eyes if we use stageID instead of i
+		var stageID = i;
 		stageHTML += '<div class="edit-stage"><div class="form-group"><label class="form-label" for="stageName">Stage ' + (i + 1) + '</label><button id="deleteButton' + i + '" class="btn btn-default button-style" type="button" onclick="deleteStage(' + i + ')">Delete Stage</button><input onchange="updateStageData(\'name\', ' + stageID + ')" id="name-' + stageID + '" type="text" class="form-control stage-form" value="' + stages[i][0] + '" placeholder="Stage ' + (i + 1) + ' Name"></div><div class="form-group"><input id="description-' + stageID + '" type="text" value="' + stages[i][1] + '" class="form-control stage-form" stageDesc="stageDesc" onchange="updateStageData(\'description\', ' + stageID + ')" value="descData' + stageID + '" placeholder="Description">	</div></div>';
 	}
 
@@ -79,6 +83,8 @@ function updateStages() {
 }
 
 function updateStageData(name, id) {
+
+	console.log('I was called! -> Name: ' + name + ' ID: ' + id);
 	
 	var properties = ['name', 'description'];
 
