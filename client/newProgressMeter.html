@@ -13,12 +13,12 @@
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 
 <!-- Local CSS -->
-<link rel="stylesheet" type="text/css" href="newProgressMeter.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 
 <body>
-<h1 id='title'>Create a new progress meter</h1>
+<h1 class='title'>Create a new progress meter</h1>
 
 <!-- Page Content Container -->
 <div class='container'>
@@ -28,27 +28,29 @@
 		<div class='col-lg-3 col-sm-1'></div>
 		
 		<div class='col-lg-6 col-sm-10'>
-			<form action='http://yrs.ducsuus.com/project/pre-test/new.php' method='post'>
-		    	<div class="form-group">
-					<label class='form-label' for="name">Name</label>
-				    <input type="text" class="form-control" name="name" placeholder="Name of the progress meter">
-				</div>
-				<div class="form-group">
-				    <label class='form-label' for="description">Desccription</label>
-				    <input type="text" class="form-control" description="description" placeholder="Description">
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>Edit Stages</label>
-				</div>
+			<div id='form-container'>
+				<form id='newbar-form' onsubmit='submitNewBarForm(); return false;'>
+			    	<div class="form-group">
+						<label class='form-label' for="name">Name</label>
+					    <input id='new-bar-form-name' type="text" class="form-control" name="bar-name" placeholder="Name of the progress meter">
+					</div>
+					<div class="form-group">
+					    <label class='form-label' for="description">Description</label>
+					    <input id='new-bar-form-description' type="text" class="form-control" description="description" name='bar-description' placeholder="Description">
+					</div>
+					<div class='form-group'>
+						<label class='form-label'>Edit Stages</label>
+					</div>
 
-				<div id='joetesting'></div>
+					<div id='stages-container'></div>
 
-				<div class='button-center' style='text-align: center; padding: 0 0 10 0'><button class="btn btn-default" type='button' onclick='addNewStage()'>Add new stage</button></div>
+					<div class='button-center' style='text-align: center; padding: 0 0 10 0'><button class="btn btn-default" type='button' onclick='addNewStage()'>Add new stage</button></div>
 
-				<div></div>
+					<div></div>
 
-				<div class='button-center' style='text-align: center;'><button type="submit" class="btn btn-default">Submit</button></div>
-			</form>
+					<div class='button-center' style='text-align: center;'><button type='submit' class="btn btn-default">Submit</button></div>
+				</form>
+			</div>
 		</div>	
 
 	</div>
