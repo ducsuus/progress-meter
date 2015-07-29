@@ -1,10 +1,9 @@
+function addDivs(responsed){
 
-var inputstring = window.prompt("How many stages?","0");
-
-function addDivs(){
-
-	var divCount = parseInt(inputstring);
-	var elementWidth = document.getElementById('progressdiv').offsetWidth;
+	var divCount = responsed.length;
+	console.log(responsed);
+	var progressbardiv = document.getElementById('progressdiv');
+	var elementWidth = progressbardiv.offsetWidth;
 	var distance = elementWidth/divCount; //Distance between stages
 
 	console.log(elementWidth)
@@ -14,12 +13,12 @@ function addDivs(){
 	var i = 0;
 
 	while(i < divCount){
-		divHtml += '<div class="progresscircle" id="progresscircle' + i + '" style="right:' + (distance*i) + 'px;"><div class="info" id="infoid' + i + '"></div></div>';
+		divHtml += '<div class="progresscircle" id="progresscircle' + i + '" style="right:' + (distance*i) + 'px;"><div class="info"><h1 class="info_header" id="infoh'+ i +'"></h1><p class="infop" id="infoid' + i + '"></p></div></div>';
 		container.innerHTML = divHtml;
 		console.log('index' + i);
 		i++;
 	}
-
+	drawStages(responsed);
 }
 
 function stageOne(){
@@ -47,11 +46,31 @@ function stageOne(){
 	
 }
 
-// View Progress Meter JavaScript
 
+function drawStages(stages){
+	console.log('Activated drawStages function');
+	var div = document.getElementById('progressdiv');
+	for(var i = 0; i < stages.length; i++){
+		if(stages[i]['complete']=='1'){
+			var para = document.getElementById('infoid'+i);
+			var head = document.getElementById('infoh'+i);
+			head.innerHTML = stages[i]['title'];
+			para.innerHTML += stages[i]['information'];
+			para.innerHTML += 'Complete';
+		}else{
+			var para = document.getElementById('infoid'+i);
+			para.innerHTML = stages[i]['title'];
+			para.innerHTML += stages[i]['information'];
+			para.innerHTML += 'Not Complete';
+		}
+	}
+}
+// View Progress Meter JavaScript
+var response = '';
 // Function to go and update the stages on the page
 function getStages(){
 
+	console.log("Get Stages Loaded");
     // Create a new XML HTTP request
     var xhr = new XMLHttpRequest();
 
@@ -66,55 +85,22 @@ function getStages(){
 
             console.log(response);
 
-      	}
+            addDivs(response);
 
-      var stageContainer = document.getElementById('stage-list');
-            var minWidth = stageContainerWidth/6;
-            var possWidth = stageContainerWidth/response.length;
-            var stageFormatting = 'Progress'
-
-            if (stageContainerWidth/response.length >= minWidth) {
-                for (var x = 0; x < response.length; x++){
-                
-                    stageTitle = response[x]['title'];
-                    stageInformation = response[x]['information'];
-                    stageCompletion = response[x]['complete'];
-                    if (stageCompletion == '0') {
-                        stageCompletion = 'No';
-                        stageFormatting = 'progress';
-                        console.log('Formatting is now : ' + stageFormatting);
-                    } else {
-                        stageCompletion = 'Yes';
-                        stageFormatting = 'stage-complete';
-                        console.log('Formatting is now : ' + stageFormatting);
-                    }
-                    stageContainer.innerHTML += '<div class="' + stageFormatting + '" style="width: ' + possWidth + '"><div class="small-form-label-black">Stage ' + (x + 1) + ' ' + stageTitle + '<br>' + stageInformation + '<br>Stage complete : ' + stageCompletion + '</div>';
-                }
-            } else {
-                for (var x = 0; x < response.length; x++) {
-                    stageTitle = response[x]['title'];
-                    stageInformation = response[x]['information'];
-                    stageCompletion = response[x]['complete'];
-                    if (stageCompletion == 0) {
-                        stageCompletion = 'No';
-                    } else {
-                        stagecompletion = 'Yes';
-                    }
-                    stageContainer.innerHTML += '<div class="' + stageFormatting + '" style="width: ' + minWidth + '"><div class="small-form-label-black">Stage ' + (x + 1) + ' ' + stageTitle + '<br>' + stageInformation + '<br>Stage complete : ' + stageCompletion + '</div>';
-                }
-            }
-        }
-        // Open the request
+      	}   	        // Open the request
+    }
     xhr.open('GET', 'http://yrs.ducsuus.com/test/project/server/PHP/getstages.php?code=' + 'jyrs', true);
+
+    console.log('http://yrs.ducsuus.com/test/project/server/PHP/getstages.php?code=' + 'jyrs');
 
     // Set out the POST headers (GET request)
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
     // Send the request (nothing inside it)
     xhr.send(null);
-    }
 
-    
+}
 
 
 getStages();
+setTimeout(function(){ drawStages(response); }, 1000);

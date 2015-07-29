@@ -2,9 +2,9 @@ body {
 	background-color: #5e97f2;
 }
 
-h1 {
+#mainhead {
 	text-align: center;
-	font-family: Abel;
+	font-family: "Abel";
 	font-size: 75px;
 	color: white;
 }
@@ -53,11 +53,14 @@ h1 {
     transition: all 0.2s ease-in-out;
     opacity:0;
     width:200px;
-	height: 200px; 
 	background-color: white; 
 	margin-left: -90px;
-	margin-top: 100px;
+	margin-top: 50px;
 	border-radius: 25%;
+}
+
+.infop{
+	
 }
 
 .progresscircle:hover > .info {
@@ -65,7 +68,10 @@ h1 {
 }
 
 .infoheader{
-
+	text-align: center;
+	font-family: "Abel";
+	font-size: 10px;
+	color: black;
 }
 
 .infotext{
