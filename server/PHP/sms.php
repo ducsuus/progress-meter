@@ -5,7 +5,7 @@ ini_set('display_errors', '1');
 
 require 'class-Clockwork.php';
 
-function sendsms(id){
+function sendSms(){
     
     
     // Create a Clockwork object using your API key
@@ -14,7 +14,7 @@ function sendsms(id){
 
     // Setup and send 
     //07730038889
-    $message = array( "to" => "07805979775", "from" => "447860033646","message" => "Hello World" );
+    $message = array( "to" => "07805979775", "from" => "447860033646","message" => "Hello Joe" );
     $result = $clockwork->send( $message );
 
     // Check if the send was successful
@@ -25,5 +25,5 @@ function sendsms(id){
     }
 }
 
-//send-sms();
+sendSms();
 ?>
