@@ -32,8 +32,6 @@ ini_set('display_errors', '1');
 /* Login the user */
 function login($username, $password){
 
-    echo 'dsadsada';
-
 	// Setup the connection 
 	$conn = new PDO('mysql:host=localhost;dbname=progress-bar;', 'php', '09^asfd#8fa67g^h!@h67^^hj%Sfy048#+');
 
@@ -48,9 +46,6 @@ function login($username, $password){
 
     $statement->execute($statement_parameters);
 
-
-    echo 'dassadads';
-
 	// Run the statement, get a result from it, and if it is successfull continue
 	if($result = $statement->fetch(PDO::FETCH_ASSOC)){
 		// Set all of the variables to what we obtained from the query
@@ -60,10 +55,8 @@ function login($username, $password){
 		$email = $result['email'];
 		$phonenumber = $result['phonenumber'];
 
-		// Hash the given password to check if it is the same as that in the database (using username as salt)
+		// Hash the given password to check if it is the same as that in the database
 		$hashed_password = hash('sha512', $password . $username);
-
-        echo 'jjjjjj:' . $hashed_password . ':jjjjjj';
 
 		// Check to see if the passwords are the same
 		if($hashed_password == $database_password){
