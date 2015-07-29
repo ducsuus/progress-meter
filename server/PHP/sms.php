@@ -13,8 +13,10 @@ function sendSms(){
     $clockwork = new Clockwork( $key );
 
     // Setup and send 
-    //07730038889
-    $message = array( "to" => "07805979775", "from" => "447860033646","message" => "Hello Joe" );
+    $messageToSend = "Hello Joe";
+    $mobileNumber = "07805979775";    
+        
+    $message = array( "to" => $mobileNumber, "from" => "Yrs Eastbourne","message" => $messageToSend );
     $result = $clockwork->send( $message );
 
     // Check if the send was successful

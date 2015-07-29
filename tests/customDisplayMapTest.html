@@ -9,8 +9,6 @@
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
         <!-- Laods the js file -->
         <script src="customDisplayMapTest.js"></script>
-        <!-- Loads the code to get the users location -->
-        <script src="location.js"></script>
         <!-- Initalize the map -->
         <script>google.maps.event.addDomListener(window, 'load', initialize);</script>
     </head>
@@ -18,7 +16,10 @@
     <body>
         <!-- The Map --> 
         <div id="map-canvas" style="float:left;width:70%; height:100%"></div>
-        
+
+        <!-- The container that contains location -->
+        <div id='location-container'>
+
         <!-- The sidebar -->
         <div id="directionsPanel" class="panel" style="float:right;width:27%;height 100%">
             <p>Total Distance: <span id="total"></span></p>
