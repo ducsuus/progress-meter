@@ -38,6 +38,13 @@ body {
 	font-size: 24;
 	color: white;
 }
+
+.small-form-label-black {
+	display: inline-block;
+	width: 100%;
+	font-family: 'Abel';
+	font-size: 24;
+	color: black;
 }
 
 .button-center {
@@ -47,7 +54,7 @@ body {
 }
 
 .edit-stage {
-	background-color: #4487F2;
+	background-color: #B84DB8;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	padding: 10 10 10 10;
