@@ -3,7 +3,7 @@
 var id = 0
 
 function email(id){
-    // Create a PDO connection
+    // Create a PDO connection to the database
     $conn = new PDO('mysql:host=localhost;dbname=progress-bars;', 'php', '09^asfd#8fa67g^h!@h67^^hj%Sfy048#+');
     
     // Looks for things in the database
