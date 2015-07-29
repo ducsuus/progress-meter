@@ -1,54 +1,66 @@
-<!-- NOT WORDZLE JOSHUS CHRIST GUYS -->
-
 <html>
+    <head>
+        <!-- Bootstrap Base CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- Optional Bootstrap Theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <!-- Google Fonts - Abel -->
+        <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+        <!-- Local CSS -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- More local CSS -->
+        <link rel='stylesheet' type='text/css' href='Bar_Progress.css'>
+        <!-- Local CSS (use this!) -->
+        <link rel="stylesheet" type="text/css" href="viewProgressMeter.css">
+    </head>
 
-<head>
+    <body>
+        <!-- Start of header -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Progressio</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="editProgressMeter.html">Edit</a></li>
+                        <li><a href="newProgressMeter.html">Create</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../server/PHP/newaccount.html">Sign up</a></li>
+                        <li class="active"><a href="../server/PHP/login.html">Login<span class="sr-only">(current)</span></a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <!-- End of header -->
+        <h1 class='title'> View a progress meter! </h1>
+        <div style='text-align: center;'>
+            <p class='subtitle'>Cummon guys! Use the code <b>jyrs</b></p>
+            <div id='stage-list'></div>
+        </div>
 
-<!-- Bootstrap Base CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- Page Content Container -->
+        <div class='container'>
+            <div id='stage-list'></div>
+        </div>
 
-<!-- Optional Bootstrap Theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    </body>
 
-<!-- Google Fonts - Abel -->
-<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <!-- JQuery (For Bootstrap) -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-<!-- Local CSS -->
-<link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Bootstrap Javascript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<!-- More local CSS -->
-<link rel='stylesheet' type='text/css' href='Bar_Progress.css'>
-
-<!-- Local CSS (use this!) -->
-<link rel="stylesheet" type="text/css" href="viewProgressMeter.css">
-
-</head>
-
-<body>
-
-<h1 class='title'> View a progress meter! </h1>
-<div style='text-align: center;'>
-	<p class='subtitle'>Cummon guys! Use the code <b>jyrs</b></p>
-
-    <div id='stage-list'></div>
-</div>
-
-<!-- Page Content Container -->
-<div class='container'>
-
-<div id='stage-list'></div>
-
-</div>
-
-</body>
-
-<!-- JQuery (For Bootstrap) -->
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-<!-- Bootstrap Javascript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-<!-- Local Javascript -->
-<script src='viewProgressMeter.js'></script>
+    <!-- Local Javascript -->
+    <script src='viewProgressMeter.js'></script>
 
 </html>
