@@ -74,3 +74,43 @@ body {
 	top: 50%;
 	float: right;
 }
+
+#page-title{
+
+	text-align: center;
+
+	width: 100%;
+
+	padding: 2%;
+
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+	font-weight: 900;
+	font-size: 8em;
+
+}
+
+#page-title-catchphrase{
+	
+	text-align: center;
+
+	width: 100%;
+
+	margin-top: -50px;
+
+	padding: 2%;
+
+	font-family: 'Source Sans Pro', sans-serif;
+
+	color: white;
+
+	font-weight: 200;
+
+	font-size: 3.5em;
+
+}
+
+#picture-1{
+	background-color: green;
+}
+

@@ -2,29 +2,47 @@ body {
 	background-color: #5e97f2;
 }
 
-.space{
-	height: 50px;
-}
+#page-title{
 
-.title {
-	font-family: 'Abel';
-	color: white;
 	text-align: center;
-	font-size: 70;
-}
 
-.subtitle {
+	width: 100%;
+
+	padding: 2%;
+
+	font-family: 'Source Sans Pro', sans-serif;
 	color: white;
-	font-family: 'Abel';
-	text-align: center;
-	font-size: 40;
-	-webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+	font-weight: 900;
+	font-size: 8em;
+
 }
 
-.subtitle:hover {
-	font-size: 43;
+#page-title-catchphrase{
+	
+	text-align: center;
+
+	width: 100%;
+
+	margin-top: -50px;
+
+	padding: 2%;
+
+	font-family: 'Source Sans Pro', sans-serif;
+
+	color: white;
+
+	font-weight: 200;
+
+	font-size: 3.5em;
+
+}
+
+#picture-keys-container{
+
+}
+
+#picture-keys{
+	width: 100%;
 }
 
 .progress{
@@ -42,4 +60,13 @@ body {
 .progress:hover > .progress-bar{
 	width:100%;
 	border-radius: 0px;
+}
+
+.entry{
+	color: white;
+
+	font-size: 1.75em;
+
+	font-family: 'Source Sans Pro', sans-serif;
+
 }

@@ -7,9 +7,9 @@ function getStages(){
     var xhr = new XMLHttpRequest();
 
     // Define a callback function to be called when we have our JSON from the server
-    xhr.onreadystatechange=function() {
+    xhr.onreadystatechange=function(){
         // Received a response from the server
-        if (xhr.readyState==4 && xhr.status==200) {
+        if (xhr.readyState==4 && xhr.status==200){
             console.log('Received a response: ' + xhr.responseText);
 
             // Decode the JSON response
@@ -47,8 +47,10 @@ function getStages(){
                     stageCompletion = response[x]['complete'];
                     if (stageCompletion == 0) {
                         stageCompletion = 'No';
+                        stageFormatting = 'progress';
                     } else {
                         stagecompletion = 'Yes';
+                        stageFormatting = 'stage-complete'
                     }
                     stageContainer.innerHTML += '<div class="' + stageFormatting + '" style="width: ' + minWidth + '"><div class="small-form-label-black">Stage ' + (x + 1) + ' ' + stageTitle + '<br>' + stageInformation + '<br>Stage complete : ' + stageCompletion + '</div>';
                 }
