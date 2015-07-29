@@ -7,9 +7,9 @@ function getStages(){
     var xhr = new XMLHttpRequest();
 
     // Define a callback function to be called when we have our JSON from the server
-    xhr.onreadystatechange=function() {
+    xhr.onreadystatechange=function(){
         // Received a response from the server
-        if (xhr.readyState==4 && xhr.status==200) {
+        if (xhr.readyState==4 && xhr.status==200){
             console.log('Received a response: ' + xhr.responseText);
 
             // Decode the JSON response

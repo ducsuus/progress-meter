@@ -58,7 +58,8 @@ if ($acceptable_input){
 
         $bar_properties = [];
 
-        $bar_properties = $_POST['name'];
+        // James (or whoever changed this): Bar properties is an array. Please don't try and set it to be a meer string, it has feelings too.
+        $bar_properties['name'] = $post_data['name'];
 
         // Create connection
         $conn = new PDO('mysql:host=localhost;dbname=progress-bar;', 'php', '09^asfd#8fa67g^h!@h67^^hj%Sfy048#+');
@@ -126,8 +127,8 @@ if ($acceptable_input){
 
         unset($statement_parameters);
 
-        $statement_parameters[':name'] = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-        $statement_parameters[':total_stages'] = filter_input(INPUT_POST, 'total_stages', FILTER_SANITIZE_NUMBER_INT);
+        $statement_parameters[':name'] = $post_data['name'];
+        $statement_parameters[':total_stages'] = sizeof($post_data['stages']);
         $statement_parameters[':viewcode'] = $view_code;
         $statement_parameters[':editcode'] = $edit_code;
 
@@ -135,12 +136,65 @@ if ($acceptable_input){
         if ($statement->execute($statement_parameters) === TRUE) {
             //echo "New record created successfully";
 
-            // Made the new entry, success!
+            // Made the new entry, success! TODO: move the stuff below to be AFTER we've gone and added the stages
 
             echo json_encode($bar_properties);
         }else{
             echo 'Errors: ';
             print_r($statement->errorInfo());
+        }
+
+        /* Now that we've added the progress bar, we need to add the stages */
+
+        // So unfortunatly we need to go and get the ID of the entry we just created TODO: is there a better way than running ANOTHER query?!
+        // Prepare a statement to find try and find a entry with the view code supplied (the BINARY tag is used to make sure that case does matter)
+        $statement = $conn->prepare('SELECT * FROM progress_bars WHERE BINARY viewcode=:viewcode;');
+
+        // Clear up the statement_parameters variable
+        unset($statement_parameters);
+
+        // Pass in the code TODO: use the filter_input function
+        $statement_parameters[':viewcode'] = $view_code;
+
+        // Execute the statement with the parameters
+        $statement->execute($statement_parameters);
+
+        // Fetcth the esult of the query, use the FETCH_ASSOC method so that we can acess the array using string properties, for example $result['name']
+        $id = $statement->fetch(PDO::FETCH_ASSOC)['id'];
+
+        // All that, just to get an ID...
+
+        // Prepare a statement to add each stage to
+        $statement = $conn->prepare('INSERT INTO stages (progress_bars_id, stage_order, title, information) VALUES (:progress_bars_id, :stage_order, :title, :information)');
+
+        // Set the parameters
+
+        unset($statement_parameters);
+
+        // The ID only needs to be set once
+        $statement_parameters[':progress_bars_id'] = $id;
+        
+        // Define the stage order, increment each iteration - manually incrementing because it looks nicer to use a foreach loop with arrays (this may get a lot bigger in the future)
+        $stage_order = 0;
+
+        // Loop through all of the stages
+        foreach($post_data['stages'] as $stage){
+            // Stage order
+            $statement_parameters[':stage_order'] = $stage_order;
+            // The stage title
+            $statement_parameters[':title'] = $stage[0];
+            // The stage information
+            $statement_parameters[':information'] = $stage[1];
+
+            // Increment the stage order
+            $stage_order++;
+
+            // Execute and check the success of the statement
+            if(!$statement->execute($statement_parameters)){
+                // Not successfull, echo errors TODO: give the error here?
+                echo 'Errors (line number 188): ';
+                print_r($statement->errorInfo());
+            }
         }
 
     }catch(exception $ex){
