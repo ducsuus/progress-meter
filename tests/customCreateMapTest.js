@@ -17,10 +17,6 @@ function calcRoute() {
   var start = document.getElementById('start').value;
   var end = document.getElementById('end').value;
   var waypts = [];
-  var checkboxArray = document.getElementsByClassName( 'waypoints' ),
-    names  = [].map.call(inputs, function( input ) {
-        return input.value;
-    }).join( ' ' );
   var checkboxArray = document.getElementById('waypoints');
   for (var i = 0; i < checkboxArray.length; i++) {
     if (checkboxArray.options[i].selected == true) {
