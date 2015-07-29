@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Draggable directions</title>
+        <link rel="stylesheet" type="text/css" href="customMapTest.css">
+        <!-- Loads the google maps javascript api -->
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+        <!-- Laods the js file -->
+        <script src="customMapTest.js"></script>
+        <!-- Initalize the map -->
+        <script>google.maps.event.addDomListener(window, 'load', initialize);</script>
+    </head>
+    
+    <body>
+        <!-- The Map --> 
+        <div id="map-canvas" style="float:left;width:70%; height:100%"></div>
+        
+        <!-- The sidebar -->
+        <div id="directionsPanel" class="panel" style="float:right;width:27%;height 100%">
+            <p>Total Distance: <span id="total"></span></p>
+        </div>
+    </body>
+</html>
