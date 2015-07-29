@@ -29,12 +29,7 @@ function getStages(){
                 } else {
                     stageCompletion = true
                 }
-                //var line = '<b>Stage Title:</b> ' + response[x]['title'] + ' <b>Stage Information:</b> ' + response[x]['information'] + ' <b>Complete:</b> ' + response[x]['complete'];
-                //stageContainer.innerHTML += line + '<br>';
-                console.log('The title is : ' + stageTitle);
                 stageContainer.innerHTML += '<div class="subtitle">' + stageTitle + '</div><div class="small-form-label">' + stageInformation + '</div><div class="small-form-label">' + stageCompletion + '</div>';
-                console.log('The information is : ' + stageInformation);
-                console.log('The competion status is : ' + stageCompletion);
             }
         }
     }
