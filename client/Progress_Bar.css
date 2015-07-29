@@ -1,5 +1,5 @@
 body {
-	background-color: #5e97f2
+	background-color: #5e97f2;
 }
 
 h1 {
@@ -23,6 +23,14 @@ h1 {
 	z-index: -1;
 }
 
+.progress-bar{
+	height: 20px;
+	border-radius: 25px;
+	margin-top: -5px;
+	margin-left: -5px;	
+}
+
+
 .progresscircle{
 	position: absolute;
 	display: inline;
@@ -37,3 +45,29 @@ h1 {
 	z-index: 1;
 	background-color: green;
 	border-radius: 50%;
+}
+
+.info{
+	-webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity:0;
+    width:200px;
+	height: 200px; 
+	background-color: white; 
+	margin-left: -90px;
+	margin-top: 100px;
+	border-radius: 25%;
+}
+
+.progresscircle:hover > .info {
+	opacity: 1;
+}
+
+.infoheader{
+
+}
+
+.infotext{
+
+}
