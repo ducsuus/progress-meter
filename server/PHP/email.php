@@ -7,9 +7,9 @@ function email(id){
     $conn = new PDO('mysql:host=localhost;dbname=progress-bars;', 'php', '09^asfd#8fa67g^h!@h67^^hj%Sfy048#+');
     
     // Looks for things in the database
-    $statement = $conn->prepare('SELECT * FROM progress_bars WHERE BINARY viewcode=:viewcode;');
+    $email = $conn->prepare('SELECT email FROM members WHERE BINARY id=:id;');
     
-    $to      = 'JRMuir09@Gmail.com'; //TODO: replace with the email of the user id
+    $to      = $email;
     $subject = 'Progress Bar Alert'; 
     $message = ".... stage has been completed."; //TODO: replace with the latest stage that has been completed from the progress bar
     
