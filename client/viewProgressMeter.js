@@ -25,11 +25,11 @@ function getStages(){
                 stageInformation = response[x]['information'];
                 stageCompletion = response[x]['complete'];
                 if (stageCompletion == 0) {
-                    stageCompletion = false
+                    stageCompletion = 'No'
                 } else {
-                    stageCompletion = true
+                    stageCompletion = 'Yes'
                 }
-                stageContainer.innerHTML += '<div class="subtitle">' + stageTitle + '</div><div class="small-form-label">' + stageInformation + '</div><div class="small-form-label">' + stageCompletion + '</div>';
+                stageContainer.innerHTML += '<div class="subtitle">Stage ' + (x + 1) + ' ' + stageTitle + '</div><div class="small-form-label">' + stageInformation + '</div><div class="small-form-label">Stage complete : ' + stageCompletion + '</div>';
             }
         }
     }
