@@ -1,0 +1,28 @@
+body {
+    background-color: #5e97f2;
+}
+
+.space{
+    height: 50px;
+}
+
+.title {
+    font-family: 'Abel';
+    color: white;
+    text-align: center;
+    font-size: 70;
+}
+
+.subtitle {
+    color: white;
+    font-family: 'Abel';
+    text-align: center;
+    font-size: 40;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.subtitle:hover {
+    font-size: 43;
+}
