@@ -45,7 +45,7 @@ function getLocation(){
     }
 }
 
-getLocation();
+//getLocation();
 setCookies();
 
 console.log('dsadsa');

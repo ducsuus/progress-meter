@@ -6,7 +6,7 @@ var rendererOptions = {
             var map;
             
             //Defines the location 
-            var australia  = new google.maps.LatLng(-25.274398, 133.775136);
+            var userLocation  = new google.maps.LatLng(getLocation());
             
             // First function called that starts the map up
             function initialize() {
@@ -15,7 +15,7 @@ var rendererOptions = {
                     // Sets zoom level
                     zoom: 7,
                     // Sets the map center
-                    center: australia 
+                    center: userLocation 
                 };
                 map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
                 directionsDisplay.setMap(map);
@@ -31,17 +31,21 @@ var rendererOptions = {
             
             // Calculates the route
             function calcRoute() {
+                var startingPoint = "Eastbourne, BN21"; //TODO replace with data from database
+                var endingPoint = "Eastbourne, BN21"; //TODO replace with data from database
+                /*var userWaypoints={location: 'Eastbourne, BN21'}, 
+                               {location: 'Eastbourne, BN21'},
+                               {location: 'Eastbourne, BN21'};*/
                 // Array called request
                 var request = {
                     //Starting point
-                    origin: 'Sydney, NSW',
+                    origin: startingPoint,
                     //Finishing point
-                    destination: 'Melbourne, NSW',
+                    destination: endingPoint,
                     //Stops in between
-                    waypoints:[{location: 'Bourke, NSW'}, 
-                               {location: 'Broken Hill, NSW'},
-                               {location: 'Albert, NSW'}
-                              ],
+                    waypoints:[{location: 'Eastbourne, BN20'}, 
+                               {location: 'Eastbourne, BN22'},
+                               {location: 'Eastbourne, BN21'}],
                     //Method of transportation 
                     travelMode: google.maps.TravelMode.DRIVING
                 };
