@@ -1,75 +1,57 @@
-var rendererOptions = {
-    draggable: true
-};
-var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);;
+var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
-            
-//Defines the location 
-var userLocation  = new google.maps.LatLng(getLocation());
-            
-// First function called that starts the map up
-function initialize() {
-    // Array that stores the map options 
-    var mapOptions = {
-    // Sets zoom level
-    zoom: 7,
-    // Sets the map center
-    center: userLocation 
-    };
-    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    directionsDisplay.setMap(map);
-    directionsDisplay.setPanel(document.getElementById('directionsPanel'));
 
-    google.maps.event.addListener(directionsDisplay, 'directions_changed', function() {
-        computeTotalDistance(directionsDisplay.getDirections());
-    });
-                    
-    // Calls calcRoute
-    calcRoute();
+function initialize() {
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  var england = new google.maps.LatLng(54.5421194, -3.0718286);
+  var mapOptions = {
+    zoom: 6,
+    center: england
+  }
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  directionsDisplay.setMap(map);
 }
-            
-// Calculates the route
+
 function calcRoute() {
-    var startingPoint = "Eastbourne, BN21"; //TODO replace with data from database
-    var endingPoint = "Eastbourne, BN21"; //TODO replace with data from database
-    /*var userWaypoints={location: 'Eastbourne, BN21'}, 
-        {location: 'Eastbourne, BN21'},
-        {location: 'Eastbourne, BN21'};*/
-    // Array called request
-    var request = {
-        //Starting point
-        origin: startingPoint,
-        //Finishing point
-        destination: endingPoint,
-        //Stops in between
-        waypoints:[{location: 'Eastbourne, BN20'}, 
-            {location: 'Eastbourne, BN22'},
-            {location: 'Eastbourne, BN21'}],
-            //Method of transportation 
-            travelMode: google.maps.TravelMode.DRIVING
-    };
-                
-    // Don't know what this does
-    directionsService.route(request, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
-        }
-    });
-}
-            
-// Calculates the total distance
-function computeTotalDistance(result) {
-    var total = 0;
-    var myroute = result.routes[0];
-    for (var i = 0; i < myroute.legs.length; i++) {
-        total += myroute.legs[i].distance.value;
+  var start = document.getElementById('start').value;
+  var end = document.getElementById('end').value;
+  var waypts = [];
+  var checkboxArray = document.getElementsByClassName( 'waypoints' ),
+    names  = [].map.call(inputs, function( input ) {
+        return input.value;
+    }).join( ' ' );
+  var checkboxArray = document.getElementById('waypoints');
+  for (var i = 0; i < checkboxArray.length; i++) {
+    if (checkboxArray.options[i].selected == true) {
+      waypts.push({
+          location:checkboxArray[i].value,
+          stopover:true});
     }
-                
-    // Converts meters into kilometers 
-    total = total / 1000.0;
-                
-    // Updates the elements on screen 
-    document.getElementById('total').innerHTML = total + ' km';
+  }
+
+
+  var request = {
+      origin: start,
+      destination: end,
+      waypoints: waypts,
+      optimizeWaypoints: true,
+      travelMode: google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+      var route = response.routes[0];
+      var summaryPanel = document.getElementById('directions_panel');
+      summaryPanel.innerHTML = '';
+      // For each route, display summary information.
+      for (var i = 0; i < route.legs.length; i++) {
+        var routeSegment = i + 1;
+        summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment + '</b><br>';
+        summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+        summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+        summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
+      }
+    }
+  });
 }
-            

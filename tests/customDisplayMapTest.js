@@ -42,6 +42,8 @@ function calcRoute() {
         origin: startingPoint,
         //Finishing point
         destination: endingPoint,
+        //Makes it display the shortest route
+        optimizeWaypoints: true,
         //Stops in between
         waypoints:[{location: 'Eastbourne, BN20'}, 
             {location: 'Eastbourne, BN22'},

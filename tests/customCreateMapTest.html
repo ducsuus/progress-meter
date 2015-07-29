@@ -3,12 +3,12 @@
     <head>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
         <meta charset="utf-8">
-        <title>Draggable directions</title>
-        <link rel="stylesheet" type="text/css" href="customDisplayMapTest.css">
+        <title>Create a map</title>
+        <link rel="stylesheet" type="text/css" href="customCreateMapTest.css">
         <!-- Loads the google maps javascript api -->
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
         <!-- Laods the js file -->
-        <script src="customDisplayMapTest.js"></script>
+        <script src="customCreateMapTest.js"></script>
         <!-- Loads the code to get the users location -->
         <script src="location.js"></script>
         <!-- Initalize the map -->
@@ -16,12 +16,30 @@
     </head>
     
     <body>
-        <!-- The Map --> 
-        <div id="map-canvas" style="float:left;width:70%; height:100%"></div>
-        
-        <!-- The sidebar -->
-        <div id="directionsPanel" class="panel" style="float:right;width:27%;height 100%">
-            <p>Total Distance: <span id="total"></span></p>
+        <div id="map-canvas" style="float:left;width:70%;height:100%;"></div>
+        <div id="control_panel" style="width:20%;float:left;text-align:left;padding-top:20px" class="panel">
+            <div style="margin:20px;border-width:2px;" class="panel">
+                <b>Start:</b>
+                <input id="start">
+                <br>
+                <b>Waypoints:</b> <br>
+                <!--<i>(Ctrl-Click for multiple selection)</i> <br>-->
+                <select multiple id="waypoints">
+                  <option value="montreal, quebec">Montreal, QBC</option>
+                  <option value="toronto, ont">Toronto, ONT</option>
+                  <option value="chicago, il">Chicago</option>
+                  <option value="winnipeg, mb">Winnipeg</option>
+                  <option value="fargo, nd">Fargo</option>
+                  <option value="calgary, ab">Calgary</option>
+                  <option value="spokane, wa">Spokane</option>
+                </select>
+                <br>
+                <b>End:</b>
+                <input id="end">
+                <br>
+                <input type="submit" onclick="calcRoute();">
+            </div>
+            <div id="directions_panel" class="panel" style="margin:20px;background-color:#FFEE77;"></div>
         </div>
     </body>
 </html>
