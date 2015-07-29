@@ -19,8 +19,9 @@ function getStages(){
 
             var stageContainer = document.getElementById('stage-list');
             var stageContainerWidth = document.getElementById('stage-list').offsetWidth;
-            var minWidth = stageContainerWidth/4;
+            var minWidth = stageContainerWidth/6;
             var possWidth = stageContainerWidth/response.length;
+            var stageFormatting = 'Progress'
 
             if (stageContainerWidth/response.length >= minWidth) {
                 for (var x = 0; x < response.length; x++){
@@ -28,12 +29,16 @@ function getStages(){
                     stageTitle = response[x]['title'];
                     stageInformation = response[x]['information'];
                     stageCompletion = response[x]['complete'];
-                    if (stageCompletion == 0) {
-                        stageCompletion = 'No'
+                    if (stageCompletion == '0') {
+                        stageCompletion = 'No';
+                        stageFormatting = 'progress';
+                        console.log('Formatting is now : ' + stageFormatting);
                     } else {
-                        stageCompletion = 'Yes'
+                        stageCompletion = 'Yes';
+                        stageFormatting = 'stage-complete';
+                        console.log('Formatting is now : ' + stageFormatting);
                     }
-                    stageContainer.innerHTML += '<div class="Progress" style="width: ' + possWidth + '"><div class="small-form-label-black">Stage ' + (x + 1) + ' ' + stageTitle + '<br>' + stageInformation + '<br>Stage complete : ' + stageCompletion + '</div>';
+                    stageContainer.innerHTML += '<div class="' + stageFormatting + '" style="width: ' + possWidth + '"><div class="small-form-label-black">Stage ' + (x + 1) + ' ' + stageTitle + '<br>' + stageInformation + '<br>Stage complete : ' + stageCompletion + '</div>';
                 }
             } else {
                 for (var x = 0; x < response.length; x++) {
@@ -45,7 +50,7 @@ function getStages(){
                     } else {
                         stagecompletion = 'Yes';
                     }
-                    stageContainer.innerHTML += '<div class="Progress" style="width: ' + minWidth + '"><div class="small-form-label-black">Stage ' + (x + 1) + ' ' + stageTitle + '<br>' + stageInformation + '<br>Stage complete : ' + stageCompletion + '</div>';
+                    stageContainer.innerHTML += '<div class="' + stageFormatting + '" style="width: ' + minWidth + '"><div class="small-form-label-black">Stage ' + (x + 1) + ' ' + stageTitle + '<br>' + stageInformation + '<br>Stage complete : ' + stageCompletion + '</div>';
                 }
             }
         }

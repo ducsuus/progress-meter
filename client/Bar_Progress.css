@@ -32,11 +32,31 @@ h1 {
 .progress {
 	display: inline-block;
 	position: static;
-	height: 200px;
+	height: 500px;
 	border-radius: 25px;
 	border-style: solid;
 	border-width: 5px;
 	background: #B84DB8; 
+	padding: 20px;
+	text-align: center;
+	font-family: 'Abel';
+	font-size: 25px;
+	color: black;
+	border-color: white;
+	text-decoration: underline;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.stage-complete {
+	display: inline-block;
+	position: static;
+	height: 500px;
+	border-radius: 25px;
+	border-style: solid;
+	border-width: 5px;
+	background: #FF9900; 
 	padding: 20px;
 	text-align: center;
 	font-family: 'Abel';
@@ -62,4 +82,9 @@ h1 {
 .progress:hover {
 	position: static;
 	background: #B82E8A; 
+}
+
+.progress-complete:hover {
+	position: static;
+	background: #CC7A00;
 }
