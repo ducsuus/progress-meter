@@ -25,9 +25,7 @@ function stageOne(){
 	i=0
 	while(i < 1){
 		stagesstring = window.prompt('How many stages do you want it to cover?','0');
-		stages = parseInt(stagesstring);
-		divCount = parseInt(inputstring);
-		if(stages <= divCount){
+		if(stages <= 6){
 			i = 100;
 		}else{
 			window.alert('Please use a smaller number!');
@@ -38,7 +36,7 @@ function stageOne(){
 		console.log(divCount);
 		var elementWidth = progressbar.offsetWidth;
 		console.log(elementWidth);
-		var distance = (100/divCount)*stages;
+		var distance = (100/6)*stages;
 		console.log(distance);
 		var progress = document.getElementById('progress-bar');
 
