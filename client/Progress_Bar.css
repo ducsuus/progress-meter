@@ -1,0 +1,65 @@
+/*Animations */
+@keyframes colour {
+    0% {background-color: #B84DB8;}
+    10%
+    20%
+    30%
+    40%
+    50%
+    60%
+    70%
+    80%
+    90%
+    100% {background-color: yellow;}
+}
+
+
+body {
+	background-color: #5e97f2
+}
+
+.space {
+	height:50px;
+}
+
+h1 {
+	text-align: center;
+	font-family: Abel;
+	font-size: 75px;
+	color: white;
+}
+
+.progress {
+	display: inline-block;
+	position: static;
+	height: 200px;
+	border-radius: 25px;
+	border-style: solid;
+	border-width: 5px;
+	background: #B84DB8; 
+	padding: 20px;
+	text-align: center;
+	font-family: 'Abel';
+	font-size: 25px;
+	color: black;
+	border-color: white;
+	text-decoration: underline;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.info{
+	visibility: hidden;
+	height: 199px;
+	text-decoration: none;
+}
+
+.progress:hover > .info{
+	visibility: visible;
+}
+
+.progress:hover {
+	position: static;
+	background: #B82E8A; 
+}
