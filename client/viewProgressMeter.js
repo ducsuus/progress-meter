@@ -47,8 +47,10 @@ function getStages(){
                     stageCompletion = response[x]['complete'];
                     if (stageCompletion == 0) {
                         stageCompletion = 'No';
+                        stageFormatting = 'progress';
                     } else {
                         stagecompletion = 'Yes';
+                        stageFormatting = 'stage-complete'
                     }
                     stageContainer.innerHTML += '<div class="' + stageFormatting + '" style="width: ' + minWidth + '"><div class="small-form-label-black">Stage ' + (x + 1) + ' ' + stageTitle + '<br>' + stageInformation + '<br>Stage complete : ' + stageCompletion + '</div>';
                 }

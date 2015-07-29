@@ -1,3 +1,30 @@
+body {
+	background-color: #5E97F2;
+}
+
+#title {
+	font-family: 'Abel';
+	font-size: 60;
+	color: white;
+	text-align: center;
+}
+
+#subtitle {
+	font-family: 'Abel';
+	font-size: 36;
+	color: white;
+	text-align: center;
+}
+
+#form-label {
+
+	width: 100%;
+
+	font-family: 'Abel';
+	font-size: 36;
+	color: white;
+}
+
 /*Animations */
 @keyframes colour {
     0% {background-color: #B84DB8;}
@@ -29,10 +56,10 @@ h1 {
 	color: white;
 }
 
-.progress {
+.stage-uncomplete {
 	display: inline-block;
 	position: static;
-	height: 500px;
+	height: 200px;
 	border-radius: 25px;
 	border-style: solid;
 	border-width: 5px;
@@ -40,19 +67,18 @@ h1 {
 	padding: 20px;
 	text-align: center;
 	font-family: 'Abel';
-	font-size: 25px;
+	font-size: 18px;
 	color: black;
 	border-color: white;
-	text-decoration: underline;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 }
 
 .stage-complete {
-	/*display: inline-block;
+	display: inline-block;
 	position: static;
-	height: 500px;
+	height: 200px;
 	border-radius: 25px;
 	border-style: solid;
 	border-width: 5px;
@@ -60,27 +86,9 @@ h1 {
 	padding: 20px;
 	text-align: center;
 	font-family: 'Abel';
-	font-size: 25px;
+	font-size: 18px;
 	color: black;
 	border-color: white;
-	text-decoration: underline;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;*/
-	display: inline-block;
-	position: static;
-	height: 500px;
-	border-radius: 25px;
-	border-style: solid;
-	border-width: 5px;
-	background: #B84DB8; 
-	padding: 20px;
-	text-align: center;
-	font-family: 'Abel';
-	font-size: 25px;
-	color: black;
-	border-color: white;
-	text-decoration: underline;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
@@ -92,16 +100,16 @@ h1 {
 	text-decoration: none;
 }
 
-.progress:hover > .info{
+.stage-uncomplete:hover > .info{
 	visibility: visible;
 }
 
-.progress:hover {
+.stage-uncomplete:hover {
 	position: static;
 	background: #B82E8A; 
 }
 
-.progress-complete:hover {
+.stage-complete:hover {
 	position: static;
 	background: #CC7A00;
 }
