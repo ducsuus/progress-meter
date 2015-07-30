@@ -34,7 +34,6 @@ body {
 	font-weight: 200;
 
 	font-size: 3.5em;
-
 }
 
 #picture-keys-container{
@@ -62,6 +61,10 @@ body {
 	border-radius: 0px;
 }
 
+#picture-1{
+	background-color: green;
+}
+
 .entry{
 	color: white;
 
@@ -75,4 +78,9 @@ body {
 	background-color: blue;
 
 	color: white;
+
+	font-size: 1.25em;
+
+	font-family: 'Source Sans Pro', sans-serif;
+
 }

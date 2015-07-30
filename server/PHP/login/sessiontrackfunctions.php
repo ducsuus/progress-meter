@@ -32,15 +32,13 @@ ini_set('display_errors', '1');
 /* Login the user */
 function login($username, $password){
 
+    echo 'dsadsada';
+
 	// Setup the connection 
 	$conn = new PDO('mysql:host=localhost;dbname=progress-bar;', 'php', '09^asfd#8fa67g^h!@h67^^hj%Sfy048#+');
 
 	// Prepare a statement to extract all of the details we need to know about users 
-<<<<<<< HEAD
-	$statement = $conn->prepare('SELECT id, password, email, phonenumber FROM members WHERE username=:username LIMIT 1;');
-=======
 	$statement = $conn->prepare('SELECT id, password, salt, email, phonenumber FROM members WHERE username=:username LIMIT 1');
->>>>>>> origin/joe_dev
 
 	// Clear the statement_parameters array
 	unset($statement_parameters);
@@ -49,24 +47,23 @@ function login($username, $password){
 	$statement_parameters[':username'] = $username;
 
     $statement->execute($statement_parameters);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/joe_dev
+
+    echo 'dassadads';
+
 	// Run the statement, get a result from it, and if it is successfull continue
 	if($result = $statement->fetch(PDO::FETCH_ASSOC)){
 		// Set all of the variables to what we obtained from the query
 		$id = $result['id'];
 		$database_password = $result['password'];
-<<<<<<< HEAD
-=======
 		$salt = $result['salt'];
->>>>>>> origin/joe_dev
 		$email = $result['email'];
 		$phonenumber = $result['phonenumber'];
 
-		// Hash the given password to check if it is the same as that in the database
+		// Hash the given password to check if it is the same as that in the database (using username as salt)
 		$hashed_password = hash('sha512', $password . $username);
+
+        echo 'jjjjjj:' . $hashed_password . ':jjjjjj';
 
 		// Check to see if the passwords are the same
 		if($hashed_password == $database_password){
@@ -101,14 +98,6 @@ function login($username, $password){
 	}
 }
 
-<<<<<<< HEAD
-// Check to see what user is currently logged in (if any!)
-function check_login(){
-    // Check to see if the username is set in the session details
-    if (isset($_SESSION['username'])) {
-        return $_SESSION['username'];
-    } else {
-=======
 /*
 function login_check($mysqli) {
     // Check if all session variables are set 
@@ -171,7 +160,6 @@ function check_login(){
  
     } else {
         echo '2';
->>>>>>> origin/joe_dev
         // Not logged in 
         return false;
     }
