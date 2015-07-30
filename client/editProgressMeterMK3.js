@@ -1,13 +1,13 @@
 // View Progress Meter JavaScript
 
-function drawStages(stages) {
+function drawStages(stages){
 
     var stagesContainer = document.getElementById('stage-container');
 
     var width = stagesContainer.offsetWidth;
 
     // Max 4 stages per row
-    if (stages.length > 4) {
+    if (stages.length > 4){
         // The width of each stage, account margin around it
         var stageWidth = (width - (5 * 2 * 4)) / 4;
     } else{
@@ -15,16 +15,14 @@ function drawStages(stages) {
     }
 
     var htmlString = '';
-
+    
     for(var i = 0; i < stages.length; i++){
         if(stages[i]['complete'] == '1'){
             // Stage complete, display it so
-            htmlString += '<div style=\'display: inline-block;\' class="custom-input-container"><input style=\'width: ' + stageWidth + 'px;\' class=\'progress stage-complete form-control\' value="' + stages[i]['title'] + '"><br><input style=\'width: ' + stageWidth + ';\' class=\'progress stage-complete form-control\' value="' + stages[i]['information'] + '"></div>';
-            console.log('Stage is complete');
+            htmlString += '<div id="stageCompleteContainer" style=\'width: ' + stageWidth + ';\' class=\'progress stage-complete\'><input style=\'width: ' + (stageWidth - (stageWidth/5.5)) + ';\' class=\' form-control\' value="' + stages[i]['title'] + '"><br><input class="form-control" style="width: ' + (stageWidth - (stageWidth/5.5)) + ';"value="' + stages[i]['information'] + '"><label><input type="checkbox" style="margin: 30 0 0 0;">Stage complete</label></div>';
         } else {
             // Stage not complete, display it so
-            htmlString += '<div style=\'display: inline-block;\' class="custom-input-container"><input style=\'width: ' + stageWidth + 'px;\' class=\'progress stage-uncomplete form-control\' value="' + stages[i]['title'] + '"><br><input style=\'width: ' + stageWidth + ';\' class=\'progress stage-complete form-control\' value="' + stages[i]['information'] + '"></div>';
-            console.log('Stage is incomplete');
+            htmlString += '<div id="stageCompleteContainer" style=\'width: ' + stageWidth + ';\' class=\'progress stage-uncomplete\'><input style=\'width: ' + (stageWidth - (stageWidth/5.5)) + ';\' class=\' form-control\' value="' + stages[i]['title'] + '"><br><input class="form-control" style="width: ' + (stageWidth - (stageWidth/5.5)) + ';"value="' + stages[i]['information'] + '"><label><input type="checkbox" style="margin: 30 0 0 0;">Stage complete</label></div>';       
         }
 
         //htmlString += '<div style=\'width: ' + stageWidth + ';\' class=\'progress\'>' + stages[i]['title'] + '<br>' + stages[i]['information'] + '</div>';            
@@ -47,6 +45,7 @@ function getStages(){
     xhr.onreadystatechange=function() {
         // Received a response from the server
         if (xhr.readyState==4 && xhr.status==200) {
+            console.log('Received a response: ' + xhr.responseText);
 
             // Decode the JSON response
             var response = JSON.parse(xhr.responseText);
