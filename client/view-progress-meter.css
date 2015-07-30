@@ -94,6 +94,17 @@ h1 {
 	transition: all 0.2s ease-in-out;
 }
 
+.custom-input-continer {
+	display: inline-block;
+	height: 200px;
+	border-radius: 25px;
+	border-style: solid;
+	border-width: 10px;
+	border-color: white;
+	font-family: 'Abel';
+	background-color: #FF9900;
+}
+
 .info{
 	visibility: hidden;
 	height: 199px;
