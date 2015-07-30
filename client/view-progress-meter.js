@@ -19,18 +19,16 @@ function drawStages(stages){
     for(var i = 0; i < stages.length; i++){
         if(stages[i]['complete'] == '1'){
             // Stage complete, display it so
-            htmlString += '<div style=\'width: ' + stageWidth + ';\' class=\'progress stage-complete\'>' + stages[i]['title'] + '<br>' + stages[i]['information'] + '</div>';
+            htmlString += '<div style=\'margin: 5px; width: ' + stageWidth + 'px;\' class=\'col-lg-4 col-sm-4 stage-complete\'><div class=\'stage-number\'>' + (i + 1) + '</div><div class=\'stage-title\'>' + stages[i]['title'] + '</div><br><div class=\'stage-content\'>' + stages[i]['information'] + '</div></div>';
         }
         else{
             // Stage not complete, display it so
-            htmlString += '<div style=\'width: ' + stageWidth + ';\' class=\'progress stage-uncomplete\'>' + stages[i]['title'] + '<br>' + stages[i]['information'] + '</div>';            
+            htmlString += '<div style=\'margin: 5px; width: ' + stageWidth + 'px;\' class=\'col-lg-4 col-sm-4 stage-uncomplete\'><div class=\'stage-number\'>' + (i + 1) + '</div><div class=\'stage-title\'>' + stages[i]['title'] + '</div><br><div class=\'stage-content\'>' + stages[i]['information'] + '</div></div>';            
         }
 
         //htmlString += '<div style=\'width: ' + stageWidth + ';\' class=\'progress\'>' + stages[i]['title'] + '<br>' + stages[i]['information'] + '</div>';            
         
     }
-
-
 
     stagesContainer.innerHTML = htmlString;
 

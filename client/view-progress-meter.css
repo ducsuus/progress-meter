@@ -59,7 +59,7 @@ h1 {
 .stage-uncomplete {
 	display: inline-block;
 	position: static;
-	height: 200px;
+	height: 400px;
 	border-radius: 25px;
 	border-style: solid;
 	border-width: 5px;
@@ -73,12 +73,13 @@ h1 {
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
+
 }
 
 .stage-complete {
 	display: inline-block;
 	position: static;
-	height: 200px;
+	height: 400px;
 	border-radius: 25px;
 	border-style: solid;
 	border-width: 5px;
@@ -112,4 +113,26 @@ h1 {
 .stage-complete:hover {
 	position: static;
 	background: #CC7A00;
+}
+
+.stage-number{
+	position: absolute;
+
+	width: 20px;
+
+	background-color: rgba(1, 1, 1, 0.1);
+
+	margin-top: -12px;
+	margin-left: -12px;
+
+	border-radius: 20px;
+}
+
+.stage-title{
+
+	font-size: 1.2em;
+}
+
+.stage-content{
+	font-size: 1em;
 }
