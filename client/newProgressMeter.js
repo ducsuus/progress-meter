@@ -28,7 +28,11 @@ function submitNewBarForm(){
 
 				var formContainer = document.getElementById('form-container');
 
-				var codeHTML = '<div style="border-radius: 10px; border: 2px solid black; background-color: white;">Viewcode: ' + response['viewcode'] + '</div><div style="border-radius: 10px; border: 2px solid black; background-color: white;">Editcode: ' + response['editcode'] + '</div>dasdsadasdasdasdsa';
+				var viewCodeURL = 'http://yrs.ducsuus.com/test/project/client/viewProgressMeter/?code=' + response['viewcode'];
+
+				var editCodeURL = 'http://yrs.ducsuus.com/test/project/client/viewProgressMeter/?code=' + response['editcode'];
+
+				var codeHTML = "<html><body><div style='display: inline-block;padding: 8px;background-color: #FFD119;border-radius: 15px;border: 2px solid #E6BC16;margin: 5px;font-family: Lucida Console;'><b><a href='" + viewCodeURL + "'>View code:</a> </b><input id='url-viewcode' type='text' value='" + viewCodeURL + "' style='border-radius: 10px;padding: 5px;outline: none;'onclick=\"document.getElementById(\'url-viewcode\').select()\" disabled></div><br><div style='display: inline-block;padding: 8px;background-color: #FFD119;border-radius: 15px;border: 2px solid #E6BC16;margin: 5px;font-family: Lucida Console;'><b><a href='" + editCodeURL + "'>Edit code:</a> </b><input id='url-editcode' type='text' value='" + editCodeURL + "' style='border-radius: 10px;padding: 5px;outline: none;'onclick=\"document.getElementById(\'url-editcode\').select()\"'></div>";
 
 				formContainer.innerHTML = codeHTML;
 
