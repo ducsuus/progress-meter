@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+        <link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="newaccount.css">
     </head>
     <body>
         <!-- Start of header -->
@@ -28,8 +30,15 @@
                         <li><a href="../../client/newProgressMeter.html">Create</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="signUp.html">Sign up</a></li>
-                        <li><a href="login.html">Login</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="../server/PHP/newaccount.html">Sign up<span class="sr-only">(current)</span></a></li>
+                                <li><a href="login.html">Login</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="../server/PHP/signOut.php">Sign out</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -39,25 +48,29 @@
         <!-- Start of form -->
         <br>
         <br>
-        <form action='newaccount.php' method='post'>
-            <h3>User Name:</h3>
-            <br>
-            <input type="text" name="username" value="User Name">
-            <br>
-            <h3>Email:</h3>
-            <br>
-            <input type="text" name="email" value="Email">
-            <br>
-            <h3>Phone number:</h3> 
-            <br>
-            <input type="text" name="phonenumber" value="12344567890">
-            <br>
-            <h3>Password:</h3> 
-            <br>
-            <input type="password" name="password" value="Password">
-            <br><br>
-            <input type="submit" value="Submit">
-        </form>
+        <div class="container"></div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <form action='newaccount.php' method='post'>
+                <h3 class="subtitle">User Name:</h3>
+                <br>
+                <input class="inputbox" type="text" name="username" value="User Name">
+                <br>
+                <h3 class="subtitle">Email:</h3>
+                <br>
+                <input class="inputbox" type="text" name="email" value="Email">
+                <br>
+                <h3 class="subtitle">Phone number:</h3> 
+                <br>
+                <input class="inputbox" type="text" name="phonenumber" value="12344567890">
+                <br>
+                <h3 class="subtitle">Password:</h3> 
+                <br>
+                <input class="inputbox" type="password" name="password" value="Password">
+                <br><br>
+                <button class="btn btn-default button-center" type="submit" value="Submit">Submit</button>
+            </form>
+        </div>
 
     </body>
 </html>
