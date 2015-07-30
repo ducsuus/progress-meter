@@ -1,107 +1,96 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
+        <!-- Bootstrap Base CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- Optional Bootstrap Theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <!-- Google Fonts - Abel -->
+        <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+        <!-- Google Fonts - Sans Pro-->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900' rel='stylesheet' type='text/css'>
+        <!-- Local CSS -->
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
 
-<!-- Bootstrap Base CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <body>
+        <!-- Start of header -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Progressio</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="editProgressMeter.html">Edit</a></li>
+                        <li><a href="newProgressMeter.html">Create</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../server/PHP/newaccount.html">Sign up</a></li>
+                        <li><a href="../server/PHP/login.html">Login</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="../server/PHP/signOut.php">Sign out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <!-- End of header -->
 
-<!-- Optional Bootstrap Theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <h1 id='page-title'>Progres&#60;io&#62;.</h1>
 
-<!-- Google Fonts - Abel -->
-<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+        <h2 id='page-title-catchphrase'>Show your customers what they want to see.</h2>
 
-<!-- Google Fonts - Sans Pro-->
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900' rel='stylesheet' type='text/css'>
+        <div class='container'>
 
-<!-- Local CSS -->
-<link rel="stylesheet" type="text/css" href="index.css">
+            <div class='row'>
 
-</head>
+                <div class='col-lg-8 col-sm-12 entry'>
+                    <p>Progresio is the tool to show your customers what they want to see. Progresio uses an intelligent and intuitive way to show customers the progress of their order, and when they can expect it to be complete.</p>
+                    <br>
+                    <p>Progression allows customers to plan in advance and make sure everything goes to plan</p>
 
-<body>
+                </div>
+                <div class='col-lg-4 hidden-sm' id='picture-keys-container'>
 
-<nav id='navbar' class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Progressio</a>
-    </div>
+                    <img id='picture-keys' src='keys.JPG'>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">New <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Edit</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">My Bars</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">New</a></li>
-            <li><a href="#">Edit</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav><!-- / navbar -->
+                </div>
+            </div>
 
-<h1 id='page-title'>Progres&#60;io&#62;.</h1>
+            <div class='row'>
+                <div style='color: red; font-size: 4em;' class='col-lg-4'>
+                    insert form in here
 
-<h2 id='page-title-catchphrase'>Show your customers what they want to see.</h2>
+                </div>
 
-<div class='container'>
+                <div class='col-lg-8 entry'>
+                    <h2>Click and go.</h2>
 
-	<div class='row'>
+                    <p>Progresio has been designed for the user. Everything you, the creator, could want to do will take only a few clicks - it's even easier for your viewers!</p>
 
-		<div class='col-lg-8 col-sm-12 entry'>
-			<p>Progresio is the tool to show your customers what they want to see. Progresio uses an intelligent and intuitive way to show customers the progress of their order, and when they can expect it to be complete.</p>
-            <br>
-			<p>Progression allows customers to plan in advance and make sure everything goes to plan</p>
+                    <p>Anyone can create a progress bar without even signing up (however you can sign up to keep track of all your bars) - to get started enter the details and click go!</p>
 
-		</div>
-		<div class='col-lg-4 hidden-sm' id='picture-keys-container'>
-
-            <img id='picture-keys' src='keys.JPG'>
-
-		</div>
-	</div>
-
-    <div class='row'>
-        <div style='color: red; font-size: 4em;' class='col-lg-4'>
-            insert form in here
-
+                </div>
+            </div>
         </div>
-
-        <div class='col-lg-8 entry'>
-            <h2>Click and go.</h2>
-
-            <p>Progresio has been designed for the user. Everything you, the creator, could want to do will take only a few clicks - it's even easier for your viewers!</p>
-
-            <p>Anyone can create a progress bar without even signing up (however you can sign up to keep track of all your bars) - to get started enter the details and click go!</p>
-
-
-        </div>
-    </div>
-</div>
-
     </body>
 
-<!-- JQuery (For Bootstrap) -->
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- JQuery (For Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-<!-- Bootstrap Javascript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Javascript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </html>
