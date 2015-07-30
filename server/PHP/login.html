@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,6 +7,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+        <link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="login.css">
     </head>
     <body>
         <!-- Start of header -->
@@ -20,7 +21,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Progressio</a>
+                    <a class="navbar-brand" href="../../client/index.html">Progresio</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -29,8 +30,15 @@
                         <li><a href="../../client/newProgressMeter.html">Create</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="newaccount.html">Sign up</a></li>
-                        <li class="active"><a href="login.html">Login<span class="sr-only">(current)</span></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../server/PHP/newaccount.html">Sign up</a></li>
+                                <li class="active"><a href="login.html">Login<span class="sr-only">(current)</span></a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="../server/PHP/signOut.php">Sign out</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -40,21 +48,26 @@
         <!-- Start of form -->
         <br>
         <br>
-        <form action='login.php' method='post'>
-            <h3>User Name:</h3>
-            <br>
-            <input type="text" value="User Name">
-            <br>
-            <h3>User Password:</h3>
-            <br>
-            <input type="text" value="User Password">
-            <br>
-            <br>
-            <input type="submit" value="Submit">
-        </form>
+        <div class="container">
+        	<div class="col-lg-3"></div>
+        	<div class="col-lg-6">
+        		<form action='login.php' method='post'>
+		            <h3 class="subtitle">User Name:</h3>
+		            <br>
+		            <input class="inputbox" type="text" value="User Name">
+		            <br>
+		            <h3 class="subtitle">User Password:</h3>
+		            <br>
+		            <input class="inputbox" type="text" value="User Password">
+		            <br>
+		            <br>
+		            <button class="btn btn-default button-center" type="submit" value="Submit">Submit</button>
+        		</form>
+        	</div>
+        </div>
+        
         <!-- End of form -->
     </body>
-=======
 <html>
 
 <head>
@@ -78,5 +91,5 @@
 
 </body>
 
->>>>>>> origin/joe_dev
 </html>
+

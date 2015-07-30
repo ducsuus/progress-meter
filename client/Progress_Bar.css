@@ -2,9 +2,9 @@ body {
 	background-color: #5e97f2;
 }
 
-h1 {
+#mainhead {
 	text-align: center;
-	font-family: Abel;
+	font-family: "Abel";
 	font-size: 75px;
 	color: white;
 }
@@ -53,19 +53,45 @@ h1 {
     transition: all 0.2s ease-in-out;
     opacity:0;
     width:200px;
-	height: 200px; 
 	background-color: white; 
 	margin-left: -90px;
-	margin-top: 100px;
+	margin-top: 50px;
 	border-radius: 25%;
+}
+
+.info_header{
+	padding-top:10px;
+	text-align: center;
+	font-family: "Abel";
+	font-size: 20px;
+	color: black;
+}
+
+.infop{
+	text-align: center;
+	padding-bottom: 5px;
+	font-family: "Abel";
+	padding-top: 20px;
+}
+
+.infoc{
+	text-align: center;
+	font-size: 30px;
+	color: green;
+	font-family: "Abel";
+	padding-bottom: 10px;
+}
+
+.infonc{
+	text-align: center;
+	font-size: 30px;
+	color: red;
+	font-family: "Abel";
+	padding-bottom: 30px;
 }
 
 .progresscircle:hover > .info {
 	opacity: 1;
-}
-
-.infoheader{
-
 }
 
 .infotext{

@@ -1,74 +1,108 @@
 <!-- Wordlze - a test by Joe Mattelaer and James Muir -->
 <html>
+    <head>
+        <!-- Bootstrap Base CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-<head>
+        <!-- Optional Bootstrap Theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-<!-- Bootstrap Base CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- Google Fonts - Abel -->
+        <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 
-<!-- Optional Bootstrap Theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <!-- Local CSS -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
 
-<!-- Google Fonts - Abel -->
-<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <body>
+        <!-- Start of header -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Progressio</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="editProgressMeter.html">Edit</a></li>
+                        <li><a href="newProgressMeter.html">Create</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="../server/PHP/newaccount.html">Sign up</a></li>
+                                <li><a href="../server/PHP/login.html">Login</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="../server/PHP/signOut.php">Sign out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <!-- End of header -->
+        
+        <br>
+        <br>
+        
+        <h1 class='title'> Edit your progress meter </h1>
+        <div>
+        <p class='subtitle'>Your edit code is : Jcada3xRFOlAiGs5V7kT<div id='edit-code-insert'></div></p>
+        </div>
 
-<!-- Local CSS -->
-<link rel="stylesheet" type="text/css" href="style.css">
+        <!-- Page Content Container -->
+        <div class='container'>
 
-</head>
+            <div class='row'>
 
-<body>
-<h1 class='title'> Edit your progress meter </h1>
-<div>
-<p class='subtitle'>Your edit code is : Jcada3xRFOlAiGs5V7kT<div id='edit-code-insert'></div></p>
-</div>
+                <div class='col-lg-3 col-sm-1'></div>
 
-<!-- Page Content Container -->
-<div class='container'>
+                <div class='col-lg-6 col-sm-10'>
+                    <form>
+                        <div class="form-group">
+                            <label class='form-label' for="description">Descripton</label>
+                            <input type="text" class="form-control" id="description" placeholder="Description of the progress meter">
+                        </div>
+                        <div class="form-group">
+                            <label class='form-label' for="stages">Stages</label>
+                            <input type="number" class="form-control" id="stages" placeholder="Stages">
+                        </div>
+                        <div class='form-group'>
+                            <label class='form-label' for='current-stage'>Current Stage</label>
+                            <input type='number' class='form-control' id='current-stage' placeholder='Current Stage'>
+                        </div>
+                        <div class='form-group'>
+                            <label class='form-label'>Edit Stages</label>
 
-	<div class='row'>
+                        <div id='stages-container'></div>
 
-		<div class='col-lg-3 col-sm-1'></div>
-		
-		<div class='col-lg-6 col-sm-10'>
-			<form>
-		    	<div class="form-group">
-					<label class='form-label' for="description">Descripton</label>
-				    <input type="text" class="form-control" id="description" placeholder="Description of the progress meter">
-				</div>
-				<div class="form-group">
-				    <label class='form-label' for="stages">Stages</label>
-				    <input type="number" class="form-control" id="stages" placeholder="Stages">
-				</div>
-				<div class='form-group'>
-					<label class='form-label' for='current-stage'>Current Stage</label>
-					<input type='number' class='form-control' id='current-stage' placeholder='Current Stage'>
-				</div>
-				<div class='form-group'>
-					<label class='form-label'>Edit Stages</label>
+                        <div class='button-center' style='text-align: center; padding: 0 0 10 0'><button class="btn btn-default button-center" type='button' onclick='addNewStage()'>Add new stage</button></div>
 
-				<div id='stages-container'></div>
+                        <div></div>
 
-				<div class='button-center' style='text-align: center; padding: 0 0 10 0'><button class="btn btn-default button-center" type='button' onclick='addNewStage()'>Add new stage</button></div>
+                        <div class='button-center' style='text-align: center;'><button type="submit" class="btn btn-default">Submit</button></div>
+                    </form>
+                </div>	
 
-				<div></div>
+            </div>
+        </div>
 
-				<div class='button-center' style='text-align: center;'><button type="submit" class="btn btn-default">Submit</button></div>
-			</form>
-		</div>	
+    </body>
 
-	</div>
-</div>
+    <!-- JQuery (For Bootstrap) -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-</body>
+    <!-- Bootstrap Javascript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<!-- JQuery (For Bootstrap) -->
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-<!-- Bootstrap Javascript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-<!-- Local Javascript -->
-<script src='newProgressMeter.js'></script>
+    <!-- Local Javascript -->
+    <script src='newProgressMeter.js'></script>
 
 </html>
