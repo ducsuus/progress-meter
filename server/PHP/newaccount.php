@@ -1,11 +1,8 @@
 <?php
 // Page to create account
 
-<<<<<<< HEAD
 session_start();
 
-=======
->>>>>>> origin/joe_dev
 require 'sessiontrackfunctions.php';
 
 // Enable error reporting
@@ -16,30 +13,24 @@ $acceptable_input = true;
 
 if (strlen($_POST['username']) > 63){
 	$acceptable_input = false;
-<<<<<<< HEAD
 	echo 'Username too long';
-=======
->>>>>>> origin/joe_dev
+
 }
 
 if(!ctype_alnum($_POST['username'])){
 	$acceptable_input = false;
-<<<<<<< HEAD
 	echo 'Username must consist of alphanumerical charcters only';
-=======
->>>>>>> origin/joe_dev
+
 }
 
 if (strlen($_POST['password']) > 63){
 	$acceptable_input = false;
-<<<<<<< HEAD
 	echo 'Password too long';
 }
 
 if(strlen($_POST['phonenumber']) > 15){
 	$acceptable_input = false;
 	echo 'Phone number too long';
-=======
 }
 
 if(!ctype_alnum($_POST['password'])){
@@ -52,23 +43,16 @@ if(strlen($_POST['phonenumber']) < 15){
 
 if(!is_numeric($_POST['phonenumber'])){
 	$acceptable_input = false;
->>>>>>> origin/joe_dev
 }
 
 if (strlen($_POST['email']) > 63){
 	$acceptable_input = false;
-<<<<<<< HEAD
 	echo 'Email too long';
-=======
->>>>>>> origin/joe_dev
 }
 
 if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 	$acceptable_input = false;
-<<<<<<< HEAD
 	echo 'Email incorrect';
-=======
->>>>>>> origin/joe_dev
 }
 
 if(!$acceptable_input){
@@ -85,7 +69,6 @@ $statement = $conn->prepare('SELECT * FROM members WHERE username=:username LIMI
 
 unset($statement_parameters);
 
-<<<<<<< HEAD
 $statement_parameters[':username'] = $_POST['username'];
 
 $statement->execute($statement_parameters);
@@ -96,11 +79,6 @@ if($statement->rowCount() > 0){
 }
 
 // Not check email and phone number right now; might as well do that in the future when we need to make sure we have no dupe entries
-
-=======
-$statement_parameters->
->>>>>>> origin/joe_dev
-
 if ($acceptable_input){
 	$username = $_POST['username'];
 	$password = $_POST['password'];
@@ -126,10 +104,7 @@ if ($acceptable_input){
 	if($statement->execute($statement_parameters)){
 		if(login($username, $password)){
 			echo 'New account created, yay :D';
-<<<<<<< HEAD
 			header('Location: ./account.php');
-=======
->>>>>>> origin/joe_dev
 		}else{
 			echo ' no login :(';
 		}
