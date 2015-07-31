@@ -44,6 +44,16 @@ if($acceptable_input){
 			if (is_numeric($_POST['stage-id']) && ($_POST['stage-complete'] == '0' || $_POST['stage-complete'] == '1')){
 				// Likely valid details
 
+				$statement = $conn->prepare('UPDATE stages SET complete=:complete WHERE progress_bars_id=:progress_bars_id AND stage_order=:stage_order;');
+
+				unset($statement_parameters);
+
+				$statement_parameters[':complete'] = $_POST['stage-complete'];
+				$statement_parameters[':progress_bars_id'] = $result['id'];
+				$statement_parameters[':stage_order'] = $_POST['stage-id'];
+
+				$statement->execute($statement_parameters);
+
 			}
 
 		}
